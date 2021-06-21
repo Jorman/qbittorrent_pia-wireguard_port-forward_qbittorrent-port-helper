@@ -1,0 +1,17 @@
+version: '3'
+services:
+	qbittorrent-port-helper:
+		build: .
+		#image: your-dockerid/yourimage  # goes to your repository on Docker Hu
+		container_name: qbittorrent-port-helper
+		environment:
+			- PUID=65534
+			- PGID=65534
+			- qbt_username=admin # Username for qbittorrent remote machine
+			- qbt_password=adminadmin # Password for qbittorrent remote machine
+			- qbt_port=8081 # Port for qbittorrent webui
+		volumes:
+			- /yacht/AppData/Config/pia:/pia-shared:ro
+		network_mode: "service:vpn"
+		depends_on: [ "vpn", "qbittorrent", ]
+		restart: unless-stopped
