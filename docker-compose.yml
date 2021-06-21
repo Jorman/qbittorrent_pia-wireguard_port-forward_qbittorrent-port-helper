@@ -11,6 +11,4 @@ services:
 			- qbt_port=8081 # Port for qbittorrent webui
 		volumes:
 			- /yacht/AppData/Config/pia:/pia-shared:ro
-		network_mode: "service:vpn"
-		depends_on: [ "vpn", "qbittorrent", ]
 		restart: unless-stopped
