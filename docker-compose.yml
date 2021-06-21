@@ -2,7 +2,6 @@ version: '3'
 services:
 	qbittorrent-port-helper:
 		build: .
-		#image: your-dockerid/yourimage  # goes to your repository on Docker Hu
 		container_name: qbittorrent-port-helper
 		environment:
 			- PUID=65534
