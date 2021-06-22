@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
 
 on:
   push:
