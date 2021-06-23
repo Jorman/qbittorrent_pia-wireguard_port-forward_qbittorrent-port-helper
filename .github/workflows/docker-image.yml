@@ -16,6 +16,6 @@ jobs:
       packages: write
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Build the Docker image
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
       run: docker build . --file Dockerfile --tag qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
