@@ -1,10 +1,16 @@
-name: qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
+name: Docker
 
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
 
@@ -13,6 +19,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - uses: actions/checkout@v2
+      run: docker build . --file Dockerfile --tag ${{ env.IMAGE_NAME }}
