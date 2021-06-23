@@ -1,4 +1,4 @@
-name: Docker
+name: Docker Image CI
 
 on:
   push:
@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
     - uses: actions/checkout@v2
+    - name: Build the Docker image
       run: docker build . --file Dockerfile --tag qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
