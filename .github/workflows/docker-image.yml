@@ -21,4 +21,4 @@ jobs:
     steps:
     - name: qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
     - uses: actions/checkout@v2
-      run: docker build . --file Dockerfile --tag ${{ env.IMAGE_NAME }}
+      run: docker build . --file Dockerfile --tag qbittorrent_pia-wireguard_port-forward_qbittorrent-port-helper
